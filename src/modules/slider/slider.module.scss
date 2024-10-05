@@ -1,0 +1,40 @@
+.swiper {
+  position: relative;
+  right: 80px;
+  padding: 0px 80px;
+  display: flex;
+  width: calc(100% + 120px);
+  margin: 0;
+  gap: 80px;
+  z-index: 0;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      width: 300px;
+      right: 0;
+      padding: 0;
+      gap: 25px;
+    }
+  }
+}
+
+.swiperSlide {
+  width: fit-content;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      margin-right: 25px;
+    }
+  }
+}
+
+.sliderContainerMobile {
+    
+  @media screen and (max-width: 1024px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

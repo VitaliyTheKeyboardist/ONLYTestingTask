@@ -1,0 +1,38 @@
+.pageWrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 320px;
+  width: 1440px;
+  height: 1080px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+
+  @media screen and (width < 1920px) {
+    & {
+      margin: 0px auto;
+    }
+  }
+  @media screen and (width < 1440px) {
+    & {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.pageWrapMobile {
+  display: none;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      display: flex;
+    }
+  }
+}
+

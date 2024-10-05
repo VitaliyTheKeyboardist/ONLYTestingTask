@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow: visible;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	outline: none;
+	outline-offset: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	user-select: none;
+}
+
+input,
+textarea,
+select {
+	outline: none;
+	border: solid 1px #fff;
+	padding: 0;
+}
+
+img {
+	user-select: none;
+	scrollbar-gutter: stable;
+}
+
+table {
+	border-collapse: collapse;
+}

@@ -1,0 +1,12 @@
+.dot,
+.active {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  opacity: 0.4;
+}
+
+.active {
+    opacity: 1;
+}

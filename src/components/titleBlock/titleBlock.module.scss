@@ -1,0 +1,10 @@
+.titleBlock {
+  display: flex;
+  gap: 78px;
+}
+
+.colorLine {
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}

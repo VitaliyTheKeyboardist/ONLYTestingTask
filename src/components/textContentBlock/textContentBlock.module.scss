@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+  overflow: auto;
+}
+
+.textContentBlock {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  max-width: 400px;
+  gap: 15px;
+  
+  @media screen and (max-width: 1024px) {
+    & {
+      
+      min-width: 166px;
+      width: 166px;
+    }
+  }
+}
+
+.date {
+  font-family: "BebasNeue";
+  font-size: 25px;
+  color: var(--date-color);
+
+  @media screen and (max-width: 1024px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}
+
+.text {
+  font-family: "PTSans";
+  font-size: 20px;
+  color: var(--text-color);
+
+  @media screen and (max-width: 1024px) {
+    & {
+      font-size: 14px;
+    }
+  }
+}

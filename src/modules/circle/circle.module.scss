@@ -1,0 +1,17 @@
+.circle {
+    position: relative;
+    display: flex;
+    width: 530px;
+    height: 530px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    transition: rotate 1s;
+}
+
+.item {
+    position: absolute;
+    top: -28px;
+    right: 236px;
+    transform-origin: 28px 292px;
+    z-index: 1;
+}

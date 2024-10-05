@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  gap: 20px;
+  transition: rotate 1s;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+  background-color: var(--text-color);
+  cursor: pointer;
+  font-family: "PTSans";
+  font-size: 0px;
+  transition: 0.3s ease-in;
+  &:hover {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--dot-border);
+    background-color: var(--base-background);
+    font-family: "PTSans";
+    font-size: 20px;
+    color: var(--text-color);
+  }
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--dot-border);
+  background-color: var(--base-background);
+  cursor: pointer;
+  transition: all 0.5s;
+  font-family: "PTSans";
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.label {
+  position: relative;
+  left: 73px;
+  font-family: 'PTSans';
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-color);
+  opacity: 1;
+  transition: all 0.2s ease-in 0.8s;
+}
+.hidden {
+  opacity: 0;
+  
+}

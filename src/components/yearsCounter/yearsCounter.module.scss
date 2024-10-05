@@ -1,0 +1,26 @@
+.primary,
+.secondary {
+    font-family: 'PTSans';
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 160px;
+    color: var(--counter-primary);
+    letter-spacing: -4px;
+    
+    @media screen and (width < 1280px) {
+        & {
+            font-size: 150px;
+
+    }
+  }
+    @media screen and (max-width: 1024px) {
+        & {
+            font-size: 56px;
+            line-height: 73px;
+            letter-spacing: 1.12px;
+    }
+  }
+}
+.secondary {
+    color: var(--counter-secondary);
+}

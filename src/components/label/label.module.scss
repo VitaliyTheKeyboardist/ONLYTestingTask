@@ -1,0 +1,16 @@
+.label {
+  display: none;
+  position: relative;
+  font-family: "PTSans";
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-color);
+
+  @media screen and (max-width: 1024px) {
+    & {
+      display: flex;
+      font-size: 14px;
+    }
+  }
+
+}

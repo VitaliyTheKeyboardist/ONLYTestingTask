@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 170px 40px 0px 80px;
+  gap: 393px;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      position: relative;
+      margin: auto;
+      padding: 59px 20px 13px;
+      gap: 150px;
+    }
+  }
+}
+
+.title {
+  position: relative;
+  right: 81px;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      right: 0px;
+    }
+  }
+}
