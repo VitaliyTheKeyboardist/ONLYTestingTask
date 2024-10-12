@@ -1,21 +1,21 @@
 import YearsCounter from "../../components/yearsCounter/yearsCounter"
-import { useAppSelector } from "../../hooks/reduxToolkitHooks"
-import { historicalDatesSelector } from "../../store/slices/historicalDates/historicalDatesSelector"
-import Dates from "../../assets/mocks/dates.json"
+
+import { useContext } from "react"
+import { HistoryDatesContext } from "../../context/historyDatesContext"
 
 import styles from "./counterBlock.module.scss"
 
 const CounterBlock = () => {
-  const { currentChoice, previousChoice } = useAppSelector(
-    historicalDatesSelector
+  const { content, currentChoice, previousChoice } = useContext(
+    HistoryDatesContext
   )
 
   const index = currentChoice - 1
   const previousIndex = previousChoice - 1
-  const dateStart = Dates.historicalDates[index].startYear
-  const finishDate = Dates.historicalDates[index].lastYear
-  const previousDateStart = Dates.historicalDates[previousIndex].startYear
-  const previousFinishDate = Dates.historicalDates[previousIndex].lastYear
+  const dateStart = content.historicalDates[index].startYear
+  const finishDate = content.historicalDates[index].lastYear
+  const previousDateStart = content.historicalDates[previousIndex].startYear
+  const previousFinishDate = content.historicalDates[previousIndex].lastYear
 
   return (
     <div className={styles.сounterBlock}>

@@ -1,18 +1,24 @@
+import HistoryDatesProvider from "../../context/historyDatesProvider"
+
 import PageContent from "../../modules/pageContent/pageContent"
 import PageMarking from "../../modules/pageMarking/pageMarking"
 
+import { IMainPage } from "../../types/components/mainPage"
+
 import styles from "./mainPage.module.scss"
 
-const MainPage = () => {
+const MainPage = ({ content }: IMainPage) => {
   return (
     <>
-      <div className={styles.pageWrap}>
-        <PageMarking />
-        <PageContent />
-      </div>
-      <div className={styles.pageWrapMobile}>
-        <PageContent />
-      </div>
+      <HistoryDatesProvider content={content}>
+        <div className={styles.pageWrap}>
+          <PageMarking />
+          <PageContent />
+        </div>
+        <div className={styles.pageWrapMobile}>
+          <PageContent />
+        </div>
+      </HistoryDatesProvider>
     </>
   )
 }

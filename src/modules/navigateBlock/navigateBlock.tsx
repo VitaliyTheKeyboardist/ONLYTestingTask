@@ -1,28 +1,23 @@
+import { useContext } from "react"
 import Arrow from "../../components/arrow/arrow"
-import { useAppDispatch, useAppSelector } from "../../hooks/reduxToolkitHooks"
-import { historicalDatesSelector } from "../../store/slices/historicalDates/historicalDatesSelector"
-import {
-  currentChoiceDecrement,
-  currentChoiceIncrement,
-  setPreviousChoice,
-} from "../../store/slices/historicalDates/historicalDatesSlice"
+
+import { HistoryDatesDispatch } from "../../context/historyDatesContext"
+import { HistoryDatesContext } from "../../context/historyDatesContext"
 
 import styles from "./navigateBlock.module.scss"
 
 const NavigateBlock = () => {
-  const { numberOfItems, currentChoice } = useAppSelector(
-    historicalDatesSelector
-  )
+  const { currentChoice, numberOfItems } = useContext(HistoryDatesContext)
 
-  const dispatch = useAppDispatch()
+  const dispatch = useContext(HistoryDatesDispatch)
 
   const firstNumber = `0${currentChoice}`
   const secondNumber = `0${numberOfItems}`
 
   const handleClick = (direction: string) => {
-    dispatch(setPreviousChoice(currentChoice))
-    if (direction === "right") dispatch(currentChoiceIncrement())
-    else dispatch(currentChoiceDecrement())
+    dispatch({ type: "setPreviousChoice", payload: currentChoice })
+    if (direction === "right") dispatch({ type: "currentChoiceIncrement" })
+    else dispatch({ type: "currentChoiceDecrement" })
   }
 
   return (

@@ -5,3 +5,7 @@ export interface IDot {
   item: IHistoricalPeriod
   index: number
 }
+
+export interface IDotMobile {
+  index: number
+}

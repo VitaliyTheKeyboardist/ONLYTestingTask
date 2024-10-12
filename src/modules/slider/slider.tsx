@@ -1,11 +1,8 @@
-import { useLayoutEffect, useRef } from "react"
+import { useContext, useLayoutEffect, useRef } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
 import gsap from "gsap"
 import TextContentBlock from "../../components/textContentBlock/textContentBlock"
-
-import { useAppSelector } from "../../hooks/reduxToolkitHooks"
-import { historicalDatesSelector } from "../../store/slices/historicalDates/historicalDatesSelector"
 
 import SliderNavigateButton from "../../components/sliderNavigateButtons/sliderNavigateButton"
 
@@ -14,10 +11,13 @@ import "swiper/css/pagination"
 
 import Label from "../../components/label/label"
 import Line from "../../components/line/line"
+
+import { HistoryDatesContext } from "../../context/historyDatesContext"
+
 import styles from "./slider.module.scss"
 
 const Slider = () => {
-  const { content, currentChoice } = useAppSelector(historicalDatesSelector)
+  const { content, currentChoice } = useContext(HistoryDatesContext)
 
   const swiperRef = useRef(null)
 
