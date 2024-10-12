@@ -1,11 +1,11 @@
-import Dates from "../../assets/mocks/dates.json"
+import { IHistoricalDatesContent } from "../dataTypes/dates"
 
 export interface IHistoricalDates {
-    content: typeof Dates
-    numberOfItems: number
-    currentChoice: number
-    previousChoice: number
-    baseRotateValue: number
-    rotateValue: number
-    rotateRatio: number
+  content: IHistoricalDatesContent
+  numberOfItems: number
+  currentChoice: number
+  previousChoice: number
+  baseRotateValue: number
+  rotateValue: number
+  rotateRatio: number
 }

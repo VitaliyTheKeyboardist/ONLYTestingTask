@@ -1,19 +1,17 @@
 import { IDot } from "../../types/components/dot"
 
-import { useAppDispatch, useAppSelector } from "../../hooks/reduxToolkitHooks"
+import { useContext } from "react"
 import {
-  setCurrentChoice,
-  setPreviousChoice,
-  setRotateValue,
-} from "../../store/slices/historicalDates/historicalDatesSlice"
-import { historicalDatesSelector } from "../../store/slices/historicalDates/historicalDatesSelector"
+  HistoryDatesContext,
+  HistoryDatesDispatch,
+} from "../../context/historyDatesContext"
 
 import styles from "./dot.module.scss"
 
 const Dot = ({ style, item, index }: IDot) => {
-  const dispatch = useAppDispatch()
+  const { currentChoice, rotateValue } = useContext(HistoryDatesContext)
 
-  const { currentChoice, rotateValue } = useAppSelector(historicalDatesSelector)
+  const dispatch = useContext(HistoryDatesDispatch)
 
   const number = index + 1
 
@@ -22,9 +20,9 @@ const Dot = ({ style, item, index }: IDot) => {
   const active = currentChoice === number
 
   const handleClick = () => {
-    dispatch(setPreviousChoice(currentChoice))
-    dispatch(setCurrentChoice(number))
-    dispatch(setRotateValue(style))
+    dispatch({ type: "setPreviousChoice", payload: currentChoice })
+    dispatch({ type: "setCurrentChoice", payload: number })
+    dispatch({ type: "setRotateValue", payload: style })
   }
 
   return (

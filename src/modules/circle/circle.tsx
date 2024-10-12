@@ -1,11 +1,12 @@
+import { useContext } from "react"
 import Dot from "../../components/dot/dot"
-import { useAppSelector } from "../../hooks/reduxToolkitHooks"
-import { historicalDatesSelector } from "../../store/slices/historicalDates/historicalDatesSelector"
+
+import { HistoryDatesContext } from "../../context/historyDatesContext"
 
 import styles from "./circle.module.scss"
 
 const Circle = () => {
-  const { content, rotateValue } = useAppSelector(historicalDatesSelector)
+  const { content, rotateValue } = useContext(HistoryDatesContext)
 
   return (
     <div className={styles.circle} style={{ rotate: `${rotateValue}deg` }}>

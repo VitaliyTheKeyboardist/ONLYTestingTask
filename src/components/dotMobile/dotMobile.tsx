@@ -1,35 +1,31 @@
-import { useAppDispatch, useAppSelector } from "../../hooks/reduxToolkitHooks"
-import { historicalDatesSelector } from "../../store/slices/historicalDates/historicalDatesSelector"
+import { useContext } from "react"
 import {
-  setCurrentChoice,
-  setPreviousChoice,
-} from "../../store/slices/historicalDates/historicalDatesSlice"
+  HistoryDatesContext,
+  HistoryDatesDispatch,
+} from "../../context/historyDatesContext"
+import { IDotMobile } from "../../types/components/dot"
+
 import styles from "./dotMobile.module.scss"
 
-export interface IDotMobile {
-  index: number
-}
-
 const DotMobile = ({ index }: IDotMobile) => {
-  const dispatch = useAppDispatch()
+  const dispatch = useContext(HistoryDatesDispatch)
 
-  const { currentChoice } = useAppSelector(historicalDatesSelector)
+  const { currentChoice } = useContext(HistoryDatesContext)
 
   const number = index + 1
 
   const active = currentChoice === number
 
   const handleClick = () => {
-    dispatch(setPreviousChoice(currentChoice))
-    dispatch(setCurrentChoice(number))
+    dispatch({ type: "setPreviousChoice", payload: currentChoice })
+    dispatch({ type: "setCurrentChoice", payload: number })
   }
 
   return (
     <button
       className={active ? styles.active : styles.dot}
       onClick={handleClick}
-    >
-    </button>
+    ></button>
   )
 }
 
