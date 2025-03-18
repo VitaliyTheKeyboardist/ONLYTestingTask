@@ -1,4 +1,4 @@
-# Тестовое задание для помпании Only
+# Тестовое задание для компании Only
 ## Технологии:
 1. React
 2. Typescript
@@ -17,3 +17,4 @@
 
    ```npm start```
 5. Проект запустится по адресу http://localhost:3000/
+6. Развернутый проект можно посмотреть по адресу https://vitaliythekeyboardist.github.io/ONLYTestTask/
